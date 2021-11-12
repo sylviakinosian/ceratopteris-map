@@ -1,0 +1,76 @@
+---
+title: "*Ceratopteris* ddRADSeq data analysis"
+author: "Sylvia Kinosian"
+output: html_document
+---
+
+
+### Map
+
+Map for GBS data
+
+```{r eval=FALSE}
+library(fields)
+
+# read in location data
+p <- read.csv("cer_locations.csv", header = T, sep = ',')
+
+# map
+map('world', fill = T, col = 'white', border = 'white', bg = 'lightgrey')
+
+# OW thalictroides, blue
+points(p[c(18:31, 33:35),5], p[c(18:31, 33:35),4], col = "#000000", bg = "#A8FFFD", cex = 2, pch = 21)
+
+# NW thalictroides, yellow
+points(p[c(17, 32, 36:39),5], p[c(17, 32, 36:39), 4], col = "#000000", bg = "#FFFF00", cex = 2, pch = 21)
+
+# cornuta, green
+points(p[2:5,5], p[2:5,4], col = "#000000", bg = "#69C261", cex = 2, pch = 21)
+
+# gaudichaudii, purple
+points(p[6:7,5], p[6:7,4], col = "#000000", bg = "#B862D3", cex = 2, pch = 21)
+
+# pteridoides, grey
+points(p[8:13,5], p[8:13,4], col = "#000000", bg = "#A39D9D", cex = 2, pch = 21)
+
+# richardii, pink
+points(p[14:16,5], p[14:16,4], col = "#000000", bg = "#FF59AC", cex = 2, pch = 21)
+
+#legend(-170, -2, legend = c("C. gaudichaudii", "C. cornuta", "C. pteridoides", "C. richardii", "C. thalictroides"), bg = "white", pch = 19, cex = 1.5, col = c("#B862D3", "#69C261", "#FFFF00", "#FF59AC", "#A8FFFD"), text.font = 3)
+
+legend(-170, -2, legend = c("C. thalictroides 1", "C. thalictroides 2", "C. cornuta", "C. gaudichaudii", "C. pteridoides", "C. richardii"), bg = "white", pch = 19, cex = 1.5, col = c("#A8FFFD", "#FFFF00", "#69C261", "#B862D3", "#A39D9D", "#FF59AC"), text.font = 3)
+```
+
+Map of GBIF occurances
+
+```{r eval=FALSE}
+library(fields)
+
+# read in location data
+p <- read.csv("cer_locations.csv", header = T, sep = ',')
+
+# map
+map('world', fill = T, col = 'white', border = 'white', bg = 'lightgrey')
+
+# OW thalictroides, blue
+points(p[345:1139,5], p[345:1139,4], col = "#000000", bg = "#A8FFFD", cex = 2, pch = 21)
+
+# NW thalictroides, yellow
+# points(p[c(17, 32, 36:39),5], p[c(17, 32, 36:39), 4], col = "#000000", bg = "#FFFF00", cex = 2, pch = 21)
+
+# cornuta, green
+points(p[1:55,5], p[1:55,4], col = "#000000", bg = "#69C261", cex = 2, pch = 21)
+
+# gaudichaudii, purple
+points(p[302:344,5], p[302:344,4], col = "#000000", bg = "#B862D3", cex = 2, pch = 21)
+
+# pteridoides, grey
+points(p[56:294,5], p[56:294,4], col = "#000000", bg = "#A39D9D", cex = 2, pch = 21)
+
+# richardii, pink
+points(p[295:301,5], p[295:301,4], col = "#000000", bg = "#FF59AC", cex = 2, pch = 21)
+
+#legend(-170, -2, legend = c("C. gaudichaudii", "C. cornuta", "C. pteridoides", "C. richardii", "C. thalictroides"), bg = "white", pch = 19, cex = 1.5, col = c("#B862D3", "#69C261", "#FFFF00", "#FF59AC", "#A8FFFD"), text.font = 3)
+
+legend(-170, -2, legend = c("C. thalictroides 1", "C. thalictroides 2", "C. cornuta", "C. gaudichaudii", "C. pteridoides", "C. richardii"), bg = "white", pch = 19, cex = 1.5, col = c("#A8FFFD", "#FFFF00", "#69C261", "#B862D3", "#A39D9D", "#FF59AC"), text.font = 3)
+```
